@@ -40,7 +40,7 @@
         android:layout_weight="1"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_product"
-        android:alpha="0.5"/>
+        android:alpha="0.7"/>
 
     <Button
         android:id="@+id/buttonCart"
