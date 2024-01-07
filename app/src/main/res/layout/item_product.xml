@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:cardCornerRadius="10dp"
+    app:cardPreventCornerOverlap="false"
+    android:clipToPadding="false"
+    app:elevation="4dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="15dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Product Image -->
+        <ImageView
+            android:id="@+id/imageProduct"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_prodimage"
+            android:scaleType="centerCrop" />
+
+        <!-- Product Details Layout -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:orientation="vertical">
+
+            <!-- Product Name -->
+            <TextView
+                android:id="@+id/textProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Product Name: "
+                android:textSize="18sp"/>
+
+            <!-- Product Price -->
+            <TextView
+                android:id="@+id/textProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price: £0.00"
+                android:textSize="16sp"/>
+
+            <!-- Add to Cart Button -->
+            <Button
+                android:id="@+id/btnAddToCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add to Cart"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+

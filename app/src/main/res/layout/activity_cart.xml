@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Cart Title -->
+    <TextView
+        android:id="@+id/textCartTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="Cart"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <!-- RecyclerView for Cart Items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textCartTitle"
+        android:layout_above="@+id/linearLayoutPayment"
+        android:layout_marginTop="8dp"
+        tools:listitem="@layout/item_cart_product"
+        android:alpha="0.5"/>
+
+    <!-- Payment and Order Section -->
+    <LinearLayout
+        android:id="@+id/linearLayoutPayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Add More Items Button -->
+        <Button
+            android:id="@+id/btnAddMoreItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add More Items"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Total Price -->
+        <TextView
+            android:id="@+id/textTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Price: £0.00"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Payment Method Selection -->
+        <RadioGroup
+            android:id="@+id/radioGroupPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/radioCash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cash"/>
+
+            <RadioButton
+                android:id="@+id/radioCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Card"/>
+        </RadioGroup>
+
+        <!-- Place Order Button -->
+        <Button
+            android:id="@+id/btnPlaceOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Place Order"/>
+
+    </LinearLayout>
+</RelativeLayout>
+

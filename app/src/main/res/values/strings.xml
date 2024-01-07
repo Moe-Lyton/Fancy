@@ -10,4 +10,14 @@
     <string name="email">Email...</string>
     <string name="click_here_to_register">Click HERE to register</string>
     <string name="cancel">Cancel</string>
+    <string name="welcome_name">Welcome, name</string>
+    <string name="menu" />
+    <string name="cart" />
+    <string name="profile" />
+    <string name="addToCart" />
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="go_to_cart" />
+    <string name="view_cart">View Cart</string>
+    <string name="logout" />
 </resources>
