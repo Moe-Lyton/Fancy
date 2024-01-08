@@ -11,10 +11,13 @@ class customerRepository {
     private val database: DatabaseReference = Firebase.database.reference.child("customers")
 
     fun addCustomer(customer: Customer) {
-        database.child(customer.cusId).setValue(customer)
+        customer.cusId?.let { database.child(it).setValue(customer) }
     }
 
 }
 
 
  */
+
+
+

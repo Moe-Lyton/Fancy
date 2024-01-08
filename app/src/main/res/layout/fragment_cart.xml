@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CartFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomCartActions"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:id="@+id/bottomCartActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Total Price: £0.00"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnAddMoreItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add More Items" />
+
+        <Button
+            android:id="@+id/btnChoosePayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose Payment"/>
+
+        <Button
+            android:id="@+id/btnPlaceOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Place Order"/>
+    </LinearLayout>
+
+</RelativeLayout>

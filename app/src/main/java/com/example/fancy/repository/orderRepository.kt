@@ -11,10 +11,18 @@ class orderRepository {
     private val database: DatabaseReference = Firebase.database.reference.child("orders")
 
     fun addOrder(order: Order) {
-        database.child(order.orderId).setValue(order)
+        database.child(order.orderId.toString()).setValue(order)
+    }
+
+    companion object {
+        fun placeOrder(order: Order) {
+            orderRepository().addOrder(order)
+        }
     }
 
 }
 
  */
+
+
 

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="4dp"
+    android:layout_margin="10dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:gravity="center">
+
+        <!-- Header: Order Details -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginBottom="8dp"
+            android:text="Order Details:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Order ID -->
+        <TextView
+            android:id="@+id/textViewOrderId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order ID: "
+            android:textSize="16sp"/>
+
+        <!-- Customer ID -->
+        <TextView
+            android:id="@+id/textViewCustomerId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer ID: "
+            android:textSize="16sp"/>
+
+        <!-- Order Time -->
+        <TextView
+            android:id="@+id/textViewOrderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Time: "
+            android:textSize="16sp"/>
+
+        <!-- Order Status -->
+        <TextView
+            android:id="@+id/textViewOrderStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Status: "
+            android:textSize="16sp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+
+

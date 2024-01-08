@@ -1,4 +1,5 @@
 /*
+
 package com.example.fancy.repository
 
 import com.google.firebase.database.DatabaseReference
@@ -13,7 +14,29 @@ class productRepository {
         database.child(product.prodId).setValue(product)
     }
 
+    fun updateProduct(product: Product) {
+        database.child(product.prodId).setValue(product)
+    }
+
+    fun deleteProduct(product: Product) {
+        database.child(product.prodId).removeValue()
+    }
+
+    fun getProduct(prodId: String) {
+        database.child(prodId).get()
+    }
+
+    fun getAllProducts() {
+        database.get()
+    }
+
+
+
 }
 
  */
+
+
+
+
 

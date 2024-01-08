@@ -9,12 +9,12 @@ import com.example.fancy.data.Admin
 class adminRepository {
     private val database: DatabaseReference = Firebase.database.reference.child("admins")
 
-    fun addAdmin(admin: Admin) {
-        database.child(admin.adminId).setValue(admin)
-    }
 
 
 }
 
  */
+
+
+
 
