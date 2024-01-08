@@ -28,9 +28,10 @@ class OrdersAdapter(
         itemClickListener = listener
     }
 
+    private val selectedOrders = mutableSetOf<Order>()
+
     fun getSelectedOrders(): Set<Order> {
-        // Implement logic to get selected orders
-        return emptySet()
+        return selectedOrders
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
@@ -53,18 +54,45 @@ class OrdersAdapter(
         private val textOrderId: TextView = itemView.findViewById(R.id.textOrderId)
         private val textOrderStatus: TextView = itemView.findViewById(R.id.textOrderStatus)
 
+        init {
+            // Set click listener for the entire item view
+            itemView.setOnClickListener {
+                val order = ordersList[adapterPosition]
+                // Toggle the selection state
+                if (selectedOrders.contains(order)) {
+                    selectedOrders.remove(order)
+                } else {
+                    selectedOrders.add(order)
+                }
+                // Notify the item click listener
+                itemClickListener.onItemClick(order)
+                // Update the UI to reflect the selection
+                notifyItemChanged(adapterPosition)
+            }
+
+            // Set click listener for the checkbox
+            checkBoxOrder.setOnCheckedChangeListener { _, isChecked ->
+                val order = ordersList[adapterPosition]
+                // Toggle the selection state
+                if (isChecked) {
+                    selectedOrders.add(order)
+                } else {
+                    selectedOrders.remove(order)
+                }
+                // Notify the item click listener
+                itemClickListener.onItemClick(order)
+            }
+        }
+
         fun bind(order: Order) {
             // Bind data to views
-            textOrderId.text = "Order ID: ${order.orderId}"
-            textOrderStatus.text = "Status: ${order.orderStatus}"
+            textOrderId.text = context.getString(R.string.order_id, order.orderId)
+            textOrderStatus.text = context.getString(R.string.order_status, order.orderStatus)
 
-            // Set click listener
-            itemView.setOnClickListener { itemClickListener.onItemClick(order) }
-
-            // You may want to handle CheckBox clicks if needed
-            checkBoxOrder.setOnCheckedChangeListener { _, isChecked ->
-                // Handle checkbox state change if needed
-            }
+            // Set the checkbox state based on the selection
+            checkBoxOrder.isChecked = selectedOrders.contains(order)
         }
     }
 }
+
+

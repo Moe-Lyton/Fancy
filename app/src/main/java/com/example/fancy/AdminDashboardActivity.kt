@@ -22,11 +22,11 @@ class AdminDashboardActivity : AppCompatActivity() {
             startActivity(manageProductsIntent)
         }
 
-        /*btnViewOrders.setOnClickListener {
+        btnViewOrders.setOnClickListener {
             // Handle the click, for example, navigate to the ViewOrdersActivity
             val viewOrdersIntent = Intent(this, ViewOrdersActivity::class.java)
             startActivity(viewOrdersIntent)
-        }*/
+        }
 
         // Add more click listeners for other buttons as needed
 

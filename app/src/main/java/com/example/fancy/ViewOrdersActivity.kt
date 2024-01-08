@@ -76,11 +76,11 @@ class ViewOrdersActivity : AppCompatActivity() {
 
     private fun updateUI() {
         if (ordersList.isEmpty()) {
-            noOrdersTextView.text = "No ongoing orders"
+            noOrdersTextView.setText(R.string.no_ongoing_orders)
             preparingButton.isEnabled = false
             readyButton.isEnabled = false
         } else {
-            noOrdersTextView.text = ""
+            noOrdersTextView.setText("")
             preparingButton.isEnabled = true
             readyButton.isEnabled = true
         }
@@ -89,19 +89,17 @@ class ViewOrdersActivity : AppCompatActivity() {
     }
 
     private fun markOrdersStatus(status: String) {
-        val selectedOrders = ordersAdapter.getSelectedOrders()
+        val selectedOrders = ordersAdapter.getSelectedOrders() ?: emptySet()
 
         for (order in selectedOrders) {
             order.orderStatus = status
             databaseReference.child(order.orderId.orEmpty()).setValue(order)
         }
 
-        // Implement notification logic when status is "Ready"
-        if (status == "Ready") {
+        if (status == "Ready" && selectedOrders.isNotEmpty()) {
             sendNotificationToCustomers(selectedOrders)
         }
 
-        // Refresh UI after updating orders
         updateUI()
     }
 
@@ -110,5 +108,6 @@ class ViewOrdersActivity : AppCompatActivity() {
         // Notify customers that their orders are ready for collection
     }
 }
+
 
 

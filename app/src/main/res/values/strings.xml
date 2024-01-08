@@ -21,4 +21,7 @@
     <string name="view_cart">View Cart</string>
     <string name="logout"/>
     <string name="price_format">Price: £%s</string>
+    <string name="no_ongoing_orders">null</string>
+    <string name="order_id">0000</string>
+    <string name="order_status">status</string>
 </resources>
